@@ -21,7 +21,7 @@ records, and saves the result for querying, exporting, and diffing.
 
 ## Public tools
 
-- [Marcato](https://pypi.org/project/marcato/) — deterministic HTML-to-Markdown conversion on `lxml`.
+- [`marcato`](https://pypi.org/project/marcato/) — deterministic HTML-to-Markdown conversion on `lxml`.
 - [`analog-sdk`](https://pypi.org/project/analog-sdk/) — the `analog` command, Python SDK, and built-in browser.
 - [`analog-mcp`](https://pypi.org/project/analog-mcp/) — Analog for MCP-compatible agents.
 - [`homebrew-tap`](https://github.com/getanalog/homebrew-tap) — Homebrew distribution for the Analog CLI.
