@@ -1,14 +1,15 @@
 # Analog lets any AI understand websites as code.
 
 The perception layer for LLMs: webpages in, structured records out.
-Deterministic, local-first, honest.
+Deterministic, zero-shot, honest.
 
 ```bash
 analog get https://quotes.toscrape.com/js/
 ```
 
-Analog renders webpages in a local browser, turns them into structured
-records, and saves the result for querying, exporting, and diffing.
+The SDK fetches webpages in a local browser by default, then sends the URL and
+rendered page content to Analog for structured extraction. Results return to
+the SDK and are saved locally for querying, exporting, and diffing.
 
 **Analog is currently in private alpha.**
 
@@ -26,6 +27,7 @@ records, and saves the result for querying, exporting, and diffing.
 - [`analog-mcp`](https://pypi.org/project/analog-mcp/) — Analog for MCP-compatible agents.
 - [`homebrew-tap`](https://github.com/getanalog/homebrew-tap) — Homebrew distribution for the Analog CLI.
 
-Extraction is zero-shot and uses no LLMs. Pages are fetched on your machine by
-default. Analog is deliberately blockable automation: it respects `robots.txt`
+Extraction is zero-shot and uses no LLMs. The default browser visits as an
+unauthenticated user; `mode="local"` is the Markdown-only path that sends
+nothing. Analog is deliberately blockable automation: it respects `robots.txt`
 and does not use stealth, proxies, fingerprint spoofing, or CAPTCHA solving.
