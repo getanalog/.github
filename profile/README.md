@@ -1,11 +1,8 @@
 # Analog lets any AI understand websites as code.
 
-Webpages in, structured records out.
-
-Most ways of giving a webpage to an AI flatten it into a stream of text.
-Analog turns the page into the things it contains — products, articles,
-events, listings, and other records — so an AI can query, compare, export,
-and use them directly. No site-specific schema or API is required.
+Analog converts webpages into the things they contain — products, articles,
+events, listings, and other records — so AIs can query, compare, export,
+and use them directly. No site-specific schema or API is ever required. Just grab Analog and go.
 
 ## Start here
 
@@ -19,23 +16,34 @@ Already have access?
 
 ## How Analog works
 
-Pages are fetched in a browser on your machine by default. For structured
-extraction, the SDK sends the URL and rendered page content to Analog. Results
-return to the SDK and are saved locally unless disabled. Authenticated content
-is sent only when you explicitly provide it through `html=` or a custom
-fetcher. `mode="local"` is the Markdown-only path that sends nothing.
+Analog offers two modes:
 
-Extraction uses no LLMs. Given the same page URL and HTML, the same engine
-produces the same records. A live page's HTML can change between fetches.
+1. **Structured extraction (default).**
+    - **Render.** Analog renders pages in a browser on your machine.
+    - **Send.** The page content is sent to Analog (we never log browsing history).
+    - **Map.** Analog converts the page into ordered sections containing labeled records, prose, and navigation. Conversion is deterministic: the same page input always produces the same result.
+    - **Use.** We hand the converted result back to you. It's saved locally, where you can query, export, reopen, and compare it using Analog's built-in tools.
+
+2. **Local Markdown conversion (`--mode local`).** This fetches the page and
+   converts it to Markdown using `marcato`, our Markdown conversion library.
+   Conversion happens entirely on your machine; the page content is never sent
+   to Analog. Local mode is free — use it anytime you need to convert
+   webpages to Markdown.
 
 ## The public toolkit
 
-- [`analog-sdk`](https://pypi.org/project/analog-sdk/) — the `analog` command,
-  Python SDK, and built-in browser.
+- [`analog-sdk`](https://pypi.org/project/analog-sdk/) — the `analog` command and Python library.
+  - Renders dynamic pages with a built-in headless browser.
+  - Maps their records, prose, and navigation in document order.
+  - Saves results locally for reopening, querying, exporting, and diffing with the Analog CLI.
+  - Includes `marcato` for high-fidelity Markdown conversion.
+- [`marcato`](https://pypi.org/project/marcato/) — our free Python library for HTML-to-Markdown conversion, built for accuracy and performance.
+  - Preserves document structure, accessible text, and code.
+  - Preserves links and image URLs without breaking Markdown syntax.
+  - Converts tables when Markdown can represent them faithfully, and preserves
+    their content when it cannot.
 - [`analog-mcp`](https://pypi.org/project/analog-mcp/) — Analog for
   MCP-compatible agents.
-- [`marcato`](https://pypi.org/project/marcato/) — deterministic
-  HTML-to-Markdown conversion on `lxml`.
 - [`homebrew-tap`](https://github.com/getanalog/homebrew-tap) — Homebrew
   distribution for the Analog CLI.
 
