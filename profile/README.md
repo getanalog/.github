@@ -1,18 +1,20 @@
 # Analog lets any AI understand websites as code.
 
-Analog converts webpages into the things they contain — products, articles,
-events, listings, and other records — so AIs can query, compare, export,
+Analog is a web interface built for AIs. It converts webpages into the things they contain — products, articles, events, and other records — so AIs can query, compare, export,
 and use them directly. No site-specific schema or API is ever required. Just grab Analog and go.
 
 ## Start here
 
 **Analog is currently in private alpha.**
-[Join the private alpha →](https://getanalog.io/signup)
 
-Already have access?
-[Install Analog](https://getanalog.io/docs/install/) ·
-[Run the quickstart](https://getanalog.io/docs/quickstart/) ·
-[Use Analog through MCP](https://getanalog.io/docs/mcp/)
+Have an invite code?
+[Sign up here](https://getanalog.io/signup)
+
+Already signed up?
+
+- [Install Analog](https://getanalog.io/docs/install/)
+- [Run the quickstart](https://getanalog.io/docs/quickstart/)
+- [Use Analog through MCP](https://getanalog.io/docs/mcp/)
 
 ## How Analog works
 
